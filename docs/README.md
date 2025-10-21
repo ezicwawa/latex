@@ -18,8 +18,8 @@ A simple, browser-based tool that converts normal Latin text into the stylized s
 - **Font:** [Roboto Mono](https://fonts.google.com/specimen/Roboto+Mono)
 - **Inspiration:**
   - [nikothegamer100's translator](https://nikothegamer100.github.io/latex-language-translator/)
-  - [A lingojam translator](https://lingojam.com/%5BTSC%5DLatexLanguage)
-  - [My old translator](https://lingojam.com/TSCLatexLanguageTranslator)
+  - [My old LingoJam translator](https://lingojam.com/TSCLatexLanguageTranslator)
+  - [Another LingoJam translator](https://lingojam.com/%5BTSC%5DLatexLanguage)
 
 ## License
 This project is licensed under the **MIT License** — free to use, modify, and share, with attribution.
