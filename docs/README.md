@@ -3,7 +3,7 @@
 <div align="center">
   
 ![License Badge](https://img.shields.io/badge/License-MIT-green)
-![Release Badge](https://img.shields.io/badge/Release-0.2.0-blue)
+![Release Badge](https://img.shields.io/badge/Release-0.3.0-blue)
 
 </div>
 
