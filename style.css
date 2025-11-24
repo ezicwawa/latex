@@ -57,11 +57,190 @@ body {
 }
 
 .textarea-container {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
+  display: grid;
+  grid-template-rows: auto auto auto;
+  gap: 0.6rem;
+  align-items: start;
   flex: 1;
   width: 100%;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #dddddd;
+  font-size: 0.9rem;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.controls-row {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  width: 100%;
+}
+
+.control-box {
+  border: 2px solid #dddddd;
+  color: #dddddd;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  flex: 1 1 0;
+  background: #151515;
+  padding: 0.45rem 0.6rem;
+  min-height: 2.6rem;
+}
+
+.counter {
+  justify-content: flex-end;
+  min-width: 6rem;
+  text-align: right;
+}
+
+.controls input,
+.controls label {
+  align-self: center;
+}
+
+.control-box > * {
+  display: flex;
+  align-items: center;
+  height: auto;
+}
+
+.control-box label {
+  line-height: 1;
+}
+
+input[type="range"] {
+  height: 14px;
+  margin: 0 0 0 0.5rem;
+}
+
+input[type="checkbox"] {
+  transform: none;
+  margin-right: 0.5rem;
+}
+
+.counter {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+label[for], .control-box label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  height: 100%;
+}
+
+input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  vertical-align: middle;
+}
+
+input[type="range"] {
+  -moz-appearance: none;
+  appearance: none;
+  height: 10px;
+  margin: 0 0 0 0.5rem;
+}
+
+.counter span {
+  display: inline-block;
+  line-height: 1;
+}
+
+.counter-content {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  height: 100%;
+}
+
+.counter-label {
+  margin-left: 0.5rem;
+}
+
+.control-box label,
+.counter-content {
+  line-height: 1.2rem;
+}
+
+.control-box input[type="checkbox"], .control-box input[type="range"], .control-box label, .counter-content {
+  margin: 0;
+  padding: 0;
+}
+
+.control-box {
+  min-height: 2.8rem;
+}
+
+.control-box label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 600px) {
+  .control-box label { white-space: normal; }
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: auto;
+  height: 6px;
+  background: #333;
+  border-radius: 4px;
+}
+
+.control-box input[type="range"] {
+  flex: 1 1 0;
+  width: auto;
+  min-width: 6rem;
+  max-width: 100%;
+  margin-left: 0.5rem;
+}
+
+.control-box label {
+  flex: 0 0 auto;
+  margin-right: 0.5rem;
+}
+
+@media (max-width: 420px) {
+  .control-box input[type="range"] { min-width: 4.2rem; }
+}
+
+.range-wrap {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+}
+.range-wrap input[type="range"] {
+  width: 100%;
+  margin-left: 0.5rem;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  background: #4095bf;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
 textarea {
@@ -83,7 +262,7 @@ textarea:focus {
 }
 
 .copy-btn {
-  margin-top: 0.5rem;
+  margin: 0;
   width: 100%;
   height: 2.5rem;
   font-size: 1rem;
@@ -135,15 +314,17 @@ footer {
 }
 
 @media (max-width: 1000px) {
-  .translator,
-  .textarea-container {
+  .translator {
     flex-direction: column;
     align-items: center;
-    height: auto;
+  }
+  .textarea-container {
+    grid-template-rows: auto auto auto;
+    width: 100%;
   }
 }
 
-@media (max-height: 770px) {
+@media (max-height: 880px) {
   footer {
     position: static;
     transform: none;

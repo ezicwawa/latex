@@ -14,25 +14,42 @@
 </head>
 <body>
   <span class="title">THUNDER SCIENTIFIC CORPORATION</span>
-  <span class="title">LATEX LANGUAGE TRANSLATOR (C) 2041</span>
+  <span class="title">LATEX LANGUAGE TRANSLATOR (C) 2025</span>
   <div style="height: 1rem;"></div>
   <span class="text">TRANSLATOR VERSION</span>
-  <a class="text" href="https://slashtemporary.github.io/latex/version">[ 0.3.0 ]</a>
+  <a class="text" href="https://slashtemporary.github.io/latex/version">[ 1.0.0 ]</a>
   <div style="height: 1rem;"></div>
   <div class="translator">
     <div class="textarea-container">
       <textarea id="latin" placeholder="Latin goes here..."></textarea>
+      <div class="controls-row">
+        <div class="controls control-box">
+          <label><input id="removeZalgoCheckbox" type="checkbox"> Remove Zalgo</label>
+        </div>
+        <div class="counter control-box">
+          <div class="counter-content"><span id="latinCount">0</span><span class="counter-label"> characters</span></div>
+        </div>
+      </div>
       <button class="copy-btn" data-target="latin">[ COPY LATIN ]</button>
     </div>
     <img class="icon" src="translator_icon.png" alt="Translator Icon">
     <div class="textarea-container">
       <textarea id="latex" placeholder="Latex goes here..."></textarea>
+      <div class="controls-row">
+        <div class="controls control-box">
+          <label for="zalgoRange">Zalgo</label>
+          <div class="range-wrap">
+            <input id="zalgoRange" type="range" min="0" max="100" value="0">
+          </div>
+        </div>
+        <div class="counter control-box">
+          <div class="counter-content"><span id="latexCount">0</span><span class="counter-label"> characters</span></div>
+        </div>
+      </div>
       <button class="copy-btn" data-target="latex">[ COPY LATEX ]</button>
     </div>
   </div>
-  <footer><a href="https://github.com/slashtemporary/latex">TSC Latex Language Translator</a> made with ❤ by <a href="https://github.com/slashtemporary">/tmp</a></footer>
+  <footer><a href="https://github.com/slashtemporary/latex">TSC Latex Language Translator</a> made with ❤ by <a href="https://github.com/slashtemporary">slashtemporary</a></footer>
   <script src="script.js"></script>
 </body>
-
 </html>
-
