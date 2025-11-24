@@ -3,13 +3,13 @@
 <div align="center">
   
 ![License Badge](https://img.shields.io/badge/License-MIT-green)
-![Release Badge](https://img.shields.io/badge/Release-0.3.0-blue)
+![Release Badge](https://img.shields.io/badge/Release-0.4.0-blue)
 
 </div>
 
-> [!NOTE]  
-> This project was built purely for fun — it’s not an official or professional tool.<br>
-> You’re welcome to reuse, modify, or integrate it into your own creations, as long as proper credit is given to this repository.
+> [!IMPORTANT]  
+> This project is a fully independent tool created purely for fun and educational purposes. It is **not** an official or professional product, and I am **not affiliated, associated, authorized, or endorsed** by Thunder Scientific Corporation (TSC) or any of its related groups or projects.  
+> You are welcome to reuse, modify, or integrate this tool into your own creations, as long as proper credit is given to this repository.
 
 ## Overview
 A simple, browser-based tool that converts standard Latin text into the stylized symbolic alphabet used by **Latex Creatures** within the fictional universe of **Thunder Scientific Corporation**.
