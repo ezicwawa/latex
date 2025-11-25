@@ -172,6 +172,9 @@ input[type="range"] {
   margin-left: 0.5rem;
 }
 
+.count-warning { color: #bf9540; }
+.count-danger { color: #bf4040; }
+
 .control-box label,
 .counter-content {
   line-height: 1.2rem;

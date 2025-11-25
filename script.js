@@ -19,6 +19,20 @@ const removeZalgoCheckbox = document.getElementById('removeZalgoCheckbox');
 const latinCountEl = document.getElementById('latinCount');
 const latexCountEl = document.getElementById('latexCount');
 
+// Update counter display and apply color classes at thresholds
+function updateCounter(el, count) {
+  if (!el) return;
+  el.textContent = count;
+  el.classList.remove('count-warning', 'count-danger');
+  if (count >= 4000) el.classList.add('count-danger');
+  else if (count >= 2000) el.classList.add('count-warning');
+}
+
+function updateAllCounts() {
+  if (latinCountEl) updateCounter(latinCountEl, Array.from(latinText.value).length);
+  if (latexCountEl) updateCounter(latexCountEl, Array.from(symbolText.value).length);
+}
+
 function escapeRegExp(str) {
   return str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
@@ -93,8 +107,7 @@ function setupLinks() {
     const translated = translateText(latinText.value, map);
     const withZalgo = applyZalgo(translated, zalgoRange ? zalgoRange.value : 0);
     symbolText.value = withZalgo;
-    if (latinCountEl) latinCountEl.textContent = Array.from(latinText.value).length;
-    if (latexCountEl) latexCountEl.textContent = Array.from(symbolText.value).length;
+    updateAllCounts();
     lockedLT = false;
   }
 
@@ -103,27 +116,25 @@ function setupLinks() {
     lockedSL = true;
     const translated = translateSymbolsToLatin(symbolText.value);
     latinText.value = translated;
-    if (latinCountEl) latinCountEl.textContent = Array.from(latinText.value).length;
-    if (latexCountEl) latexCountEl.textContent = Array.from(symbolText.value).length;
+    updateAllCounts();
     lockedSL = false;
   }
 
   latinText.addEventListener('input', updateLatinToSymbol);
   latinText.addEventListener('input', () => {
-    if (latinCountEl) latinCountEl.textContent = Array.from(latinText.value).length;
+    if (latinCountEl) updateCounter(latinCountEl, Array.from(latinText.value).length);
   });
   if (zalgoRange) zalgoRange.addEventListener('input', () => { if (zalgoValue) zalgoValue.textContent = zalgoRange.value; updateLatinToSymbol(); });
 
   symbolText.addEventListener('input', updateSymbolToLatin);
   symbolText.addEventListener('input', () => {
-    if (latexCountEl) latexCountEl.textContent = Array.from(symbolText.value).length;
+    if (latexCountEl) updateCounter(latexCountEl, Array.from(symbolText.value).length);
   });
   if (removeZalgoCheckbox) removeZalgoCheckbox.addEventListener('change', updateSymbolToLatin);
 
   if (zalgoValue && zalgoRange) zalgoValue.textContent = zalgoRange.value;
   updateLatinToSymbol();
-  if (latinCountEl) latinCountEl.textContent = Array.from(latinText.value).length;
-  if (latexCountEl) latexCountEl.textContent = Array.from(symbolText.value).length;
+  updateAllCounts();
 }
 
 function syncScroll(a, b) {
